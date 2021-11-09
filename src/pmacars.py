@@ -1,7 +1,7 @@
 '''
 parse and process the xplane Data.txt file
 '''
-import sys
+import sys, urllib.request, json
 
 samplefile = "samples/Data.txt"
 
@@ -89,14 +89,45 @@ def processdata(keys, records):
     return ret
 
 
-        
+def parsevatsim(vatsimid):
+    vatsimurl = "https://data.vatsim.net/v3/vatsim-data.json"
+
+    response = urllib.request.urlopen(vatsimurl)
+    data = response.read().decode()
+    vatsimdata = json.loads(data)
+
+    pilots = vatsimdata.get('pilots')
+
+    ret = None
+
+    for p in pilots:
+        if p['cid']==vatsimid:
+            ret=p
+            break
+    
+    return ret
+            
+
+
+
 
 
 if __name__ == '__main__':
 
+    print("Usage: pmacars.py <xplane_data_txt_full_file_path> [<vatsim_id>]")
     inputfile = samplefile
     if len(sys.argv)>1:
         inputfile = sys.argv[1]
+        if len(sys.argv)>2:
+            vatsimid=sys.argv[2]
+            vatsimid=int(vatsimid)
+
+            print(f"Parsing VATSIM record for vatsim ID: {vatsimid}...")
+
+            vatsimrec = parsevatsim(vatsimid)
+            print(vatsimrec)
+
+    input("Please exit the X-Plane and then press ENTER to parse the data.txt file...")
 
     keys,records = parsedatafile(inputfile)
 
