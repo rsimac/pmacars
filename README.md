@@ -13,9 +13,9 @@ simple python ACARS utility for x-plane
 
 2. Fly
 
-3. Exit X-Plane
+3. Exit X-Plane. This is mandatory, to flush and complete the Data.txt file.
 
-4. Run this utility and use the output to fill your flight log:
+4. Run this utility against the xplane Data.txt file and use the output to fill your flight log:
 ```
 > python pmacars.py 'C:\Program Files (x86)\Steam\steamapps\common\X-Plane 11\Data.txt'
 {'startup_zulu': '17:24', 'shutdown_zulu': '17:43'}
