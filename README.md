@@ -2,7 +2,7 @@
 simple python ACARS utility for x-plane
 
 ## sample usage
-1. Set the x-plane data output to file (Data.txt) for following data fields:
+1. Set the x-plane data output to file (Data.txt) for following data fields as documented at https://www.x-plane.com/kb/data-set-output-table/
 ```
     real_time,totl_time,missn_time,timer_time,zulu_time,local_time,hobbs_time,
     Vind_kias,Vind_keas,Vtrue_ktas,Vtrue_ktgs,Vind_mph,Vtrue_mphas,Vtrue_mphgs,
