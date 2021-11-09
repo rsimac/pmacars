@@ -1,8 +1,7 @@
 '''
 parse and process the xplane Data.txt file
-
 '''
-
+import sys
 
 samplefile = "samples/Data.txt"
 
@@ -95,7 +94,11 @@ def processdata(keys, records):
 
 if __name__ == '__main__':
 
-    keys,records = parsedatafile(samplefile)
+    inputfile = samplefile
+    if len(sys.argv)>1:
+        inputfile = sys.argv[1]
+
+    keys,records = parsedatafile(inputfile)
 
     ret = processdata(keys, records)
 
