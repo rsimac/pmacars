@@ -1,6 +1,9 @@
 # pmacars
 simple python ACARS utility for x-plane
 
+# background
+after x-plane and vatsim flights, it would be great to have an automated way to submit your flight detals to your virtual airline using simple and lightweight, non-intrusive command line utility, based on existing data fields from x-plane and vatsim
+
 ## sample usage
 1. Set the x-plane data output to file (Data.txt) for following data fields as documented at https://www.x-plane.com/kb/data-set-output-table/
 ```
@@ -10,14 +13,18 @@ simple python ACARS utility for x-plane
     fuel1_lb,fuel2_lb,fuel3_lb,fuel4_lb,fuel5_lb,fuel6_lb,
     empty_lb,payld_lb,fuel_totlb,jetti_lb,curnt_lb,maxim_lb,cg_ftref,gear_lb,gear_lb,gear_lb
 ```
+2. Optionally, connect to Vatsim, file your flight plan, do the Vatsim things...
 
-2. Fly
+3. Fly
 
-3. Exit X-Plane. This is mandatory, to flush and complete the Data.txt file.
+4. Land. Possibly in one piece. Shut down the engines. Have a cigar.
 
-4. Run this utility against the xplane Data.txt file and use the output to fill your flight log:
-```
-> python pmacars.py 'C:\Program Files (x86)\Steam\steamapps\common\X-Plane 11\Data.txt'
-{'startup_zulu': '17:24', 'shutdown_zulu': '17:43'}
-> 
-```
+5. Start the pmacars: `python pmacars.py <full_path_to_xplane_data_txt> <your_vatsim_pilot_id>`. Pmacars will read your vatsim flight data. DO NOT exit pmacars. It still has to read xplane data file...
+
+6. Exit X-Plane. This is mandatory, to flush and complete the Data.txt file. This will also disconnect from Vatsim, at least for some vatsim clients. That is ok, we already have vatsim flight data.
+
+7. As prompted by still running pmacars, press ENTER and have pmacars read the xplane data.txt
+
+8. Observe the output and use it to submit your flight details to your virtual airline
+
+9. To be continued... See Issues under this project...
