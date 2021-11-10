@@ -17,7 +17,7 @@ after x-plane and vatsim flights, it would be great to have an automated way to 
 
 3. Fly
 
-4. Land. Possibly in one piece. Shut down the engines. Have a cigar.
+4. Land. Possibly in one piece. Shut down the engines. Have a cigar. Stay connected to the Vatsim.
 
 5. Start the pmacars: `python pmacars.py <full_path_to_xplane_data_txt> <your_vatsim_pilot_id>`. Pmacars will read your vatsim flight data. DO NOT exit pmacars. It still has to read xplane data file...
 
