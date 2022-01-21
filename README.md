@@ -21,7 +21,7 @@ after x-plane and vatsim flights, it would be great to have an automated way to 
 
 5. Start the pmacars: `python pmacars.py <full_path_to_xplane_data_txt> <your_vatsim_pilot_id>`. Pmacars will read your vatsim flight data. DO NOT exit pmacars. It still has to read xplane data file...
 
-6. Exit X-Plane. This is mandatory, to flush and complete the Data.txt file. This will also disconnect from Vatsim, at least for some vatsim clients. That is ok, we already have vatsim flight data.
+6. Exit X-Plane. This is mandatory, for X-Plane to flush and complete the Data.txt file. This will also disconnect from Vatsim, at least for some vatsim clients. That is ok, we already have vatsim flight data.
 
 7. As prompted by still running pmacars, press ENTER and have pmacars read the xplane data.txt
 
